@@ -169,6 +169,25 @@ test("S10: have valid decode", t => {
   });
 });
 
+// additional s10 checks for switch statement
+const extras = { name: 's10' };
+const validation = require("./src/utils/validation");
+
+const s10TrackingSequence1 = "29492510"; // From Tracking number "RB294925100GB"
+const checkDigit1 = 0;
+test("S10: checking for check = 0", t => {
+  const answer = validation.s10(s10TrackingSequence1, checkDigit1, extras);
+  t.truthy(answer)
+});
+
+
+const s10TrackingSequence0 = "89006891"; // From Tracking number "RB890068915GB"
+const checkDigit0 = 5;
+test("S10: checking for check = 5", t => {
+  const answer = validation.s10(s10TrackingSequence0, checkDigit0, extras);
+  t.truthy(answer)
+});
+
 // tracking number additional data for USPS 20
 const uspsTrackingNumber = "0307 1790 0005 2348 3741";
 
