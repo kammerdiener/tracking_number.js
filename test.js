@@ -394,26 +394,26 @@ test("S10: checksum 0", t => {
   const s10TrackingSequence = "29492510";
   const checkDigit = 0;
   const answer = validation.s10(s10TrackingSequence, checkDigit);
-  t.truthy(answer)
+  t.true(answer)
 });
 
 test("S10: fail checksum 0", t => {
   const s10TrackingSequence = "29492510";
   const checkDigit = 999;
   const answer = validation.s10(s10TrackingSequence, checkDigit);
-  t.falsy(answer)
+  t.false(answer)
 });
 
 test("S10: checksum 5", t => {
   const s10TrackingSequence = "89006891";
   const checkDigit = 5;
   const answer = validation.s10(s10TrackingSequence, checkDigit);
-  t.truthy(answer)
+  t.true(answer)
 });
 
 test("S10: fail checksum 5", t => {
   const s10TrackingSequence = "89006891";
   const checkDigit = 999;
   const answer = validation.s10(s10TrackingSequence, checkDigit);
-  t.falsy(answer)
+  t.false(answer)
 });
